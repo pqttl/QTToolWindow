@@ -1,0 +1,20 @@
+﻿{
+  "name": "096Right60Mid100",
+  "launchApplicationPath": "",
+  "launchApplicationParams": "",
+  "exclusiveAction": 0,
+  "windowMoveType": 4,
+  "moveMonitorID": 2,
+  "windowSizeTypeH": 1,
+  "windowSizeTypeValueH": 60.00,
+  "windowSizeTypeV": 1,
+  "windowSizeTypeValueV": 100.0,
+  "windowScreenMoveType": 410,
+  "monitorProfileID": "00000000-0000-0000-0000-000000000000",
+  "wallpaperProfileID": "00000000-0000-0000-0000-000000000000",
+  "desktopIconProfileID": "00000000-0000-0000-0000-000000000000",
+  "windowPositionProfileID": "00000000-0000-0000-0000-000000000000",
+  "windowTransparencyPercent": 0.0,
+  "moveLocationX": 0,
+  "moveLocationY": 0
+}
