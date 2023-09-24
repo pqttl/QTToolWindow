@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SerializableSnippets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <commands />
+  <extensions>
+    <Snippet>
+      <id>1</id>
+      <name>Hide Live Share and Feedback in VS 2019</name>
+      <code>public class E : VisualCommanderExt.IExtension
+{
+	public void SetSite(EnvDTE80.DTE2 DTE, Microsoft.VisualStudio.Shell.Package package)
+	{
+        timer = new System.Windows.Threading.DispatcherTimer();
+        timer.Interval = System.TimeSpan.FromMilliseconds(1000);
+        timer.Tick += OnTimer;
+
+        if(!HideFrameControl())
+            timer.Start();
+    }
+
+	public void Close()
+	{
+        timer.Stop();
+    }
+
+    private void OnTimer(System.Object o, System.EventArgs a)
+    {
+        try
+        {
+            if (HideFrameControl())
+                timer.Stop();
+        }
+        catch (System.Exception e)
+        {
+        }
+    }
+
+    private bool HideFrameControl()
+    {
+	    System.Windows.FrameworkElement e = 
+			FindElement(System.Windows.Application.Current.MainWindow, 
+				"FrameControlContainerBorder");
+		if (e != null)
+		{
+			e.Visibility = System.Windows.Visibility.Collapsed;
+            return true;
+		}
+        return false;
+    }
+
+    private System.Windows.FrameworkElement FindElement(System.Windows.Media.Visual v, string name)
+	{
+		if (v == null)
+			return null;
+		for (int i = 0; i &lt; System.Windows.Media.VisualTreeHelper.GetChildrenCount(v); ++i)
+		{
+			System.Windows.Media.Visual child = 
+				System.Windows.Media.VisualTreeHelper.GetChild(v, i) as
+					System.Windows.Media.Visual;
+			if (child != null)
+			{
+				System.Windows.FrameworkElement e = 
+					child as System.Windows.FrameworkElement;
+				if (e != null &amp;&amp; e.Name == name)
+					return e;
+			}
+			System.Windows.FrameworkElement result = FindElement(child, name);
+			if (result != null)
+				return result;
+		}
+		return null;
+	}
+
+    private System.Windows.Threading.DispatcherTimer timer;
+}
+</code>
+      <referencedAssemblies />
+      <type>Extension</type>
+      <lang>CS</lang>
+      <langVersion>v4.0</langVersion>
+      <enabled>true</enabled>
+      <includeDebugInformation>false</includeDebugInformation>
+    </Snippet>
+  </extensions>
+  <commonCode />
+</SerializableSnippets>

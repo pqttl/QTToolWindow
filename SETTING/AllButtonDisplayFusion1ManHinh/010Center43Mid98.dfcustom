@@ -1,0 +1,20 @@
+﻿{
+  "name": "010Center43Mid98",
+  "launchApplicationPath": "",
+  "launchApplicationParams": "",
+  "exclusiveAction": 0,
+  "windowMoveType": 9,
+  "moveMonitorID": 2,
+  "windowSizeTypeH": 1,
+  "windowSizeTypeValueH": 43.00,
+  "windowSizeTypeV": 1,
+  "windowSizeTypeValueV": 98.0,
+  "windowScreenMoveType": 0,
+  "monitorProfileID": "00000000-0000-0000-0000-000000000000",
+  "wallpaperProfileID": "00000000-0000-0000-0000-000000000000",
+  "desktopIconProfileID": "00000000-0000-0000-0000-000000000000",
+  "windowPositionProfileID": "00000000-0000-0000-0000-000000000000",
+  "windowTransparencyPercent": 0.0,
+  "moveLocationX": 0,
+  "moveLocationY": 0
+}
